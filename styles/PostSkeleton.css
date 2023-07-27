@@ -1,0 +1,40 @@
+.skeletone-item {
+  background-color: rgb(240, 240, 240);
+}
+
+.skeletone-item.image {
+  animation-name: color-change;
+  animation-duration: 3.6s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.skeletone-item.type {
+  animation-name: color-change;
+  animation-duration: 3.6s;
+  animation-delay: 1.2s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.skeletone-item.title {
+  animation-name: color-change;
+  animation-duration: 3.6s;
+  animation-delay: 2.4s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes color-change {
+  0% {
+    background-color: rgb(240, 240, 240);
+  }
+
+  50% {
+    background-color: rgb(201, 201, 201);
+  }
+
+  100% {
+    background-color: rgb(240, 240, 240);
+  }
+}
