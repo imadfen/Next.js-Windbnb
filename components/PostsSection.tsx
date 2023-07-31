@@ -1,5 +1,3 @@
-import Image from "next/image"
-import starIcon from "../assets/icons/starIcon.svg"
 import SkeletonGrid from "./skeletons/SkeletonGrid"
 import Post from "./Post"
 
@@ -19,15 +17,13 @@ export interface stayType {
 interface propsType {
     staysData: stayType[],
     loading: boolean,
-    errorLoad: boolean,
 }
 
-function PostsSection({ staysData, loading, errorLoad }: propsType) {
+function PostsSection({ staysData, loading }: propsType) {
     return (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 my-3">
             {loading && <SkeletonGrid /> ||
-                errorLoad && "error loading data" ||
-                staysData && staysData.map((post, i) => (
+                staysData.map((post, i) => (
                     <Post stay={post} key={i} />
                 ))
             }

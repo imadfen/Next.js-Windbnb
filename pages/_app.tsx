@@ -1,12 +1,10 @@
 import '../styles/globals.css'
 import '../styles/skeleton.css'
-import { ThemeProvider } from "@material-tailwind/react";
+import 'react-modern-drawer/dist/index.css'
 
 function MyApp({ Component, pageProps }) {
   return (
-    <ThemeProvider>
-      <Component {...pageProps} />
-    </ThemeProvider>
+    <Component {...pageProps} />
   )
 }
 
