@@ -25,7 +25,7 @@ function Header({ guestsFilter, handleFilter }: { guestsFilter: guestsFilterType
 
             <div className="m-0 py-6 grid sm:grid-cols-1 md:grid-cols-2 gap-10 items-center w-full">
                 <Image src={IconSVG} alt="logo" width={96} height={19} />
-                <div className='self-end flex gap-1 mx-auto sm:mr-0 sm:ml-auto justify-evenly rounded-xl overflow-hidden text-sm shadow-md'>
+                <div className='self-end flex gap-1 mx-auto sm:mr-0 sm:ml-auto justify-evenly rounded-xl overflow-hidden text-sm shadow-md bg-white'>
                     <button className={`hover:scale-95 transition-all duration-200 ${!selectedLocation && "text-gray-400"} ${buttonsStyle}`} onClick={() => setFilterTab(1)}>{selectedLocation ? `${selectedLocation.city}, ${selectedLocation.country}` : "Add location"}</button>
                     <div className="min-h-full w-px bg-gray-300"></div>
                     <button className={`hover:scale-95 transition-all duration-200 ${guestsNumber == 0 && "text-gray-400"} ${buttonsStyle}`} onClick={() => setFilterTab(2)}>{guestsNumber == 0 ? "Add" : guestsNumber} guests</button>
