@@ -37,6 +37,7 @@ function DrawerComponent({ selectedTab, onClose, changeTab, guestsFilter, handle
             className="py-10 px-20 flex flex-col justify-center items-center"
             direction="top"
             size={550}
+            customIdSuffix='react-drawer'
         >
 
             <FilterButtonsWrapper onClick={changeTab} tab={selectedTab} isMobile={isMobile} guestsFilter={guestsFilter} handleFilter={handleFilter} selectedLocation={selectedLocation} />

@@ -17,9 +17,9 @@ interface propsType {
     stay: stayType
 }
 
-function Post({ stay }: propsType) {
+function Post({ stay, ...props }: propsType) {
     return (
-        <div className="w-[350px] sm:w-[395px] rounded-[24px] transition-transform transform-gpu duration-200 hover:scale-105 active:scale-100">
+        <div className="w-[350px] sm:w-[395px] rounded-[24px] transition-transform transform-gpu duration-200 hover:scale-105 active:scale-100" {...props}>
             <div className="h-[238px] sm:h-[267px] w-full relative mb-5">
                 <Image src={stay.photo} alt="" className="rounded-[24px]"
                     layout="fill"
