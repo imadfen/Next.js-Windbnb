@@ -106,8 +106,8 @@ export const FilterOptionsWrapper = ({ tab, selectedLocation, setSelectedLocatio
             case 1:
                 return (
                     <div className="col-start-1 p-2 sm:p-4">
-                        {locationsList.map(obj => (
-                            <div className={`flex items-center my-4 sm:my-7 w-fit py-1 px-5 sm:py-3 sm:px-5 hover:bg-blue-gray-50 ${selectedLocation?.id == obj.id ? "bg-gray-100" : ""} hover:bg-gray-50 active:scale-95 transition-all duration-150 cursor-pointer rounded-full`} onClick={() => handleChooseLocation(obj.id)}>
+                        {locationsList.map((obj, i) => (
+                            <div key={i} className={`flex items-center my-4 sm:my-7 w-fit py-1 px-5 sm:py-3 sm:px-5 hover:bg-blue-gray-50 ${selectedLocation?.id == obj.id ? "bg-gray-100" : ""} hover:bg-gray-50 active:scale-95 transition-all duration-150 cursor-pointer rounded-full`} onClick={() => handleChooseLocation(obj.id)}>
                                 <LocationIcons fill="#4f4f4f" />
                                 <p className="text-gray-700">{obj.city}, {obj.country}</p>
                             </div>
