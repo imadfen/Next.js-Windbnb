@@ -101,6 +101,21 @@ export const FilterOptionsWrapper = ({ tab, selectedLocation, setSelectedLocatio
     }
 
 
+    const handleSetGuestsFilter = ({ key, operation }: { key: "adults" | "children", operation: "add" | "sub" }) => {
+        const oldObject = guestsFilter[0]
+        const oldVal = oldObject[key]
+
+        if (operation == "add") {
+            const newVal = oldVal + 1
+            guestsFilter[1]({ ...oldObject, [key]: newVal })
+        }
+        else {
+            const newVal = oldVal - 1
+            guestsFilter[1]({ ...oldObject, [key]: newVal })
+        }
+    }
+
+
     const RenderOptions = () => {
         switch (tab) {
             case 1:
@@ -122,9 +137,9 @@ export const FilterOptionsWrapper = ({ tab, selectedLocation, setSelectedLocatio
                             <p className='font-bold'>Adults</p>
                             <p className='text-gray-400'>Ages 13 or above</p>
                             <div className='flex gap-5'>
-                                <button className='text-gray-500 border-2 border-gray-500 aspect-square w-7 rounded hover:bg-gray-100 active:scale-90 transition-all duration-200' onClick={() => guestsFilter[1](prev => { return { ...prev, adults: prev.adults > 0 ? prev.adults-- : 0 } })}>-</button>
+                                <button className='text-gray-500 border-2 border-gray-500 aspect-square w-7 rounded hover:bg-gray-100 active:scale-90 transition-all duration-200' onClick={() => handleSetGuestsFilter({ key: "adults", operation: "sub" })}>-</button>
                                 <p>{guestsFilter[0].adults}</p>
-                                <button className='text-gray-500 border-2 border-gray-500 aspect-square w-7 rounded hover:bg-gray-100 active:scale-90 transition-all duration-200' onClick={() => guestsFilter[1](prev => { return { ...prev, adults: prev.adults++ } })}>+</button>
+                                <button className='text-gray-500 border-2 border-gray-500 aspect-square w-7 rounded hover:bg-gray-100 active:scale-90 transition-all duration-200' onClick={() => handleSetGuestsFilter({ key: "adults", operation: "add" })}>+</button>
                             </div>
                         </div>
 
@@ -132,9 +147,9 @@ export const FilterOptionsWrapper = ({ tab, selectedLocation, setSelectedLocatio
                             <p className='font-bold'>Children</p>
                             <p className='text-gray-400'>Ages 2-12</p>
                             <div className='flex gap-5'>
-                                <button className='text-gray-500 border-2 border-gray-500 aspect-square w-7 rounded hover:bg-gray-100 active:scale-90 transition-all duration-200' onClick={() => guestsFilter[1](prev => { return { ...prev, children: prev.children > 0 ? prev.children-- : 0 } })}>-</button>
+                                <button className='text-gray-500 border-2 border-gray-500 aspect-square w-7 rounded hover:bg-gray-100 active:scale-90 transition-all duration-200' onClick={() => handleSetGuestsFilter({ key: "children", operation: "sub" })}>-</button>
                                 <p>{guestsFilter[0].children}</p>
-                                <button className='text-gray-500 border-2 border-gray-500 aspect-square w-7 rounded hover:bg-gray-100 active:scale-90 transition-all duration-200' onClick={() => guestsFilter[1](prev => { return { ...prev, children: prev.children++ } })}>+</button>
+                                <button className='text-gray-500 border-2 border-gray-500 aspect-square w-7 rounded hover:bg-gray-100 active:scale-90 transition-all duration-200' onClick={() => handleSetGuestsFilter({ key: "children", operation: "add" })}>+</button>
                             </div>
                         </div>
                     </div >
