@@ -109,7 +109,7 @@ export const FilterOptionsWrapper = ({ tab, selectedLocation, setSelectedLocatio
             const newVal = oldVal + 1
             guestsFilter[1]({ ...oldObject, [key]: newVal })
         }
-        else {
+        else if (oldVal > 0) {
             const newVal = oldVal - 1
             guestsFilter[1]({ ...oldObject, [key]: newVal })
         }
